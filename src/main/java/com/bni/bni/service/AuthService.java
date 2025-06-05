@@ -22,13 +22,14 @@ public class AuthService {
     @Autowired
     private JwtUtil jwtUtil;
 
-    public String register(String username, String password) {
+    public String register(String username, String password, String email) {
         if (repo.existsByUsername(username)) {
             return "User already exists";
         }
 
         User user = new User();
         user.setUsername(username);
+        user.setEmail(email);
         user.setPasswordHash(encoder.encode(password));
         user.setRole("USER");
         user.setCreatedAt(OffsetDateTime.now());
