@@ -33,6 +33,8 @@ public class AuthService {
         user.setPasswordHash(encoder.encode(password));
         user.setRole("USER");
         user.setCreatedAt(OffsetDateTime.now());
+        user.setUpdateAt(OffsetDateTime.now());
+        user.setIsActive(true);
         repo.save(user);
 
         return "Registered successfully";

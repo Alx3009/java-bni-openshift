@@ -27,7 +27,7 @@ public class User {
     private OffsetDateTime createdAt;
 
     
-    @Column(name = "update_at", nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private OffsetDateTime updateAt;
 
     @Column(name = "is_active", nullable = false)
@@ -62,10 +62,13 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+    public void getEmail(String email) {
+        this.email = email;
+    }
     public void setEmail(String email) {
         this.email = email;
     }
-
+   
     public String getPasswordHash() {
         return passwordHash;
     }
@@ -95,5 +98,11 @@ public class User {
     }
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+    public OffsetDateTime getUpdateAt() {
+        return updateAt;
+    }
+    public void setUpdateAt(OffsetDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 }
