@@ -26,15 +26,24 @@ public class User {
     @Column(name = "created_at", nullable = false)
     private OffsetDateTime createdAt;
 
+    
+    @Column(name = "update_at", nullable = false)
+    private OffsetDateTime updateAt;
+
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive ;
+
     public User() {
       // default constructor
     }
 
-    public User(String username, String email, String passwordHash, String role, OffsetDateTime createdAt) {
+    public User(String username, String email, String passwordHash, String role, OffsetDateTime createdAt, OffsetDateTime updateAt, Boolean isActive) {
         this.username = username;
         this.email = email;
         this.passwordHash = passwordHash;
         this.role = role;
+        this.updateAt = updateAt;
+        this.isActive = isActive;
         this.createdAt = createdAt;
     }
 
@@ -79,5 +88,12 @@ public class User {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 }
