@@ -30,8 +30,9 @@ public class User {
       // default constructor
     }
 
-    public User(String username, String passwordHash, String role, OffsetDateTime createdAt) {
+    public User(String username, String email, String passwordHash, String role, OffsetDateTime createdAt) {
         this.username = username;
+        this.email = email;
         this.passwordHash = passwordHash;
         this.role = role;
         this.createdAt = createdAt;
