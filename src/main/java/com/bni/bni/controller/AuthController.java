@@ -20,7 +20,7 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @PostMapping("/register")
+    @PostMapping("/register") 
     public ResponseEntity<Map<String, Object>> register(@RequestBody Map<String, String> body) {
         String username = body.get("username");
         String password = body.get("password");
@@ -28,6 +28,7 @@ public class AuthController {
         String message = authService.register(username, password, email);
 
         Map<String, Object> response = new HashMap<>();
+        
         response.put("status", 200);
         response.put("message", message);
 
