@@ -15,7 +15,7 @@ import java.net.MalformedURLException; //dari chatgpt
 @RestController
 @RequestMapping("/api/files")
 public class FileController {
-    @Value("$(file.upload-dir)")
+    @Value("${file.upload-dir}")
     private String uploadDir;
 
     @PostMapping("/upload")
